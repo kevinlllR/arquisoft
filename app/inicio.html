@@ -46,20 +46,9 @@
                     <b>Inicio</b>
                 </a>
             </li>
-            <li>
-                <a href="#/storm">
-                    <img class="img-responsive" src="img/inicio/uv.png" alt="">
-                    <b>Indice de rayos UV</b>
-                </a>
-                 <ul class="dropbox_citys">
-                    <li ng-repeat="post in exampleLocations | orderBy:'name':true" ng-click="setLocation(post)" >
-                        <a href="#/storm">{{post}}</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
+                <li>
                 <a href="#/forecast"><img class="img-responsive" src="img/inicio/clima.png" alt="">
-                    <b>Listado de climas</b>
+                    <b>Ciudades</b>
                 </a>
                  
                 <ul class="dropbox_citys">
@@ -71,6 +60,12 @@
               <li>
                 <a href="/app/partials/mapa.html"><img class="img-responsive" src="img/inicio/clima.png" alt="">
                     <b>Mapa</b>
+                </a>
+                
+            </li>
+              <li>
+                <a href="#/mapa"><img class="img-responsive" src="img/inicio/clima.png" alt="">
+                    <b>Mapa1</b>
                 </a>
                 
             </li>

@@ -4,7 +4,9 @@
         <div>
             <p class="lead">
                 <img ng-src="{{getIconImageUrl(useDayForecast.weather[0].icon)}}" />
-                {{useDayForecast.temp.day | number:1}}&#176;C {{useDayForecast.weather[0].main}}
+                {{useDayForecast.temp.day | number:1}}&#176;C {{useDayForecast.weather[0].main}}<br/>
+                Radiación UV : {{useDayForecast.radiacion}} &nbsp;&nbsp; <br> <br>                 
+
             </p>
             <p>
                 {{useDayForecast.weather[0].description}}&nbsp;&#126;&nbsp;

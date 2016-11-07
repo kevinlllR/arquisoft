@@ -6,8 +6,8 @@ angular.module('openWeatherApp.controllers', [])
 
   // Controller for "open weather map" api data search
   .controller('OpenWeatherCtrl',
-    ['$scope','$http','$rootScope','exampleLocations','openWeatherMap','stormLocations','ISO3166','Ciudades',
-      function($scope,$http,$rootScope,exampleLocations,openWeatherMap,stormLocations,ISO3166,Ciudades) {
+    ['$scope','$http','$rootScope','exampleLocations','openWeatherMap','stormLocations','ISO3166','Ciudades','rayosUV',
+      function($scope,$http,$rootScope,exampleLocations,openWeatherMap,stormLocations,ISO3166,Ciudades,rayosUV) {
 
     $scope.message = '';
     $scope.hasState = '';
@@ -155,37 +155,57 @@ map.addListener("clickMapObject", function(event) {
 
 
 
-
-
-
-
-
     $scope.getForecastByLocation = function(p) {
-      
-
+     
       if ($scope.location == '' || $scope.location == undefined) {
         $scope.hasState = 'has-warning';
         $scope.message = 'Please provide a location';
-        return;
+       
       }
 
       $scope.hasState = 'has-success';
-
+      console.log("LOCACION==",$scope.location);
       $scope.forecast = openWeatherMap.queryForecastDaily({
         location: $scope.location
       });
       $scope.forecast.$promise.then(function(data){
+        console.log("Data para location",$scope.location)
+          for(var i=0;i<data.list.length;i++){
+              (function(i) {
+              var fecha=Date(data.list[i].dt);
+            var fecha2=new Date(fecha);
+            if(fecha2.getDate()+(i-1)<10){
+             var dias="0"+(fecha2.getDate()+(i-1));
+            }
+            else{
+              dias=fecha2.getDate()+(i-1);
+            }
+                
+              var fechax=fecha2.getFullYear()+"-"+fecha2.getMonth()+"-"+dias+"Z";
+              var lon=parseInt(data.city.coord.lon);
+              var lat=parseInt(data.city.coord.lat);
+              var url="http://api.openweathermap.org/v3/uvi/"+lat+","+lon+"/"+fechax+".json?appid=943d3a75c72ea297aa73f129275d2140";
+              console.log(url);
 
-       console.log(data.list[2].temp);
-        for(var x=0;x<data.list.length;x++){
-          var radia=10+Math.floor((getRandomArbitrary(-2,4)));
-          data.list[x].radiacion=radia;
+            $http.get(url)
+            .success(function (dat) {
+               data.list[i].radiacion=dat.data;
+            });
+
+
+         
+              })(i);
+      
+
+
         }
-       
-        console.log(data);
+         
+     
        });
 
-    };
+    }
+
+
     function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
