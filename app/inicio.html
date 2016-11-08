@@ -25,12 +25,10 @@
 </head>
 
 <body ng-controller="OpenWeatherCtrl">
-    <div>
-        
+    <div class="col-xs-12 sect-2">        
         <!-- Sidebar -->
         
-        
-        <nav class="vertical">
+        <nav class="vertical2 col-xs-3 sect-2">
           <ul>
             <li class="logo_inicio">
                 <a class="logo" href="" style="background-color: #506175;">
@@ -71,35 +69,37 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div class="login">
-            <div class="login_2 col-xs-8 col-xs-offset-4">
-                <a class="login_reg" href="#"><b>registrate!</b></a>
-                <a class="login_ini" href="#" data-toggle="modal" data-target="#IniSesion"><b>Iniciar sesión</b></a>
-            </div>            
-        </div>
-        
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="col-xs-10 col-xs-offset-2">
-                        <div class="col-xs-12">
-                            <div class="col-xs-10 col-xs-offset-1 divs_ini_container">
-                                <h2>Climas</h2>
-                                <div class="col-xs-12 div_ini_01">
-                                    <center>
-                                          <div ng-view></div>
-                                    </center>
-                                    <p>
-                                         Demasiada exposición a los rayos ultravioleta o UV puede causar quemaduras solares. Los rayos UV penetran las capas exteriores de la piel y pasan a las capas más profundas, donde pueden dañar o matar las células de la piel. Las personas que tienen poca melanina y se queman muy fácilmente deberían protegerse cubriendo las áreas sensibles usando bloqueador solar, limitando el tiempo total de exposición y limitando el tiempo de exposición entre las 10 a.m. y las 2 p.m. <br> <br>
-                                         La exposición frecuente a los rayos ultravioleta durante varios años es la causa principal del cáncer de piel. Examine su piel frecuentemente para detectar bultos sospechosos o cambios en una lesión ya existente en la piel. La detección y tratamiento a tiempo son fundamentales para incrementar las tasas de curación del cáncer de piel.
-                                    </p>  
+        <div class="col-xs-9 col-xs-offset-3 sect-2">
+            <div class="login col-xs-12 sect-2">
+                <div class="login_2 col-xs-12">
+                    <a class="login_reg" href="#"><b>registrate!</b></a>
+                    <a class="login_ini" href="#" data-toggle="modal" data-target="#IniSesion"><b>Iniciar sesión</b></a>
+                </div>            
+            </div>
+            <div id="page-content-wrapper" class="col-xs-12">
+                <div class="container-fluid">
+                        <div class="col-xs-12 sect-2">
+                            <div class="col-xs-12 sect-2">
+                                <div class="col-xs-12 divs_ini_container">
+                                    <h2>Climas</h2>
+                                    <div class="col-xs-12 div_ini_01 sect-2" >
+                                        <center>
+                                              <div ng-view></div>
+                                        </center>
+                                        <p>
+                                             Demasiada exposición a los rayos ultravioleta o UV puede causar quemaduras solares. Los rayos UV penetran las capas exteriores de la piel y pasan a las capas más profundas, donde pueden dañar o matar las células de la piel. Las personas que tienen poca melanina y se queman muy fácilmente deberían protegerse cubriendo las áreas sensibles usando bloqueador solar, limitando el tiempo total de exposición y limitando el tiempo de exposición entre las 10 a.m. y las 2 p.m. <br> <br>
+                                             La exposición frecuente a los rayos ultravioleta durante varios años es la causa principal del cáncer de piel. Examine su piel frecuentemente para detectar bultos sospechosos o cambios en una lesión ya existente en la piel. La detección y tratamiento a tiempo son fundamentales para incrementar las tasas de curación del cáncer de piel.
+                                        </p>  
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
+            
+        
+       
         <!-- /#page-content-wrapper -->
 
     </div>
