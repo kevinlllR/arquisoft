@@ -30,10 +30,7 @@
 }
 .sidebar-brand img{
 	padding-right: 0;
-}
-.vertical{
-	width: 250px;
-}
+} 
 .logo_inicio{
     padding-bottom: 10px;
     padding-left: 20px;
@@ -78,14 +75,17 @@
 *{padding:0;margin:0;}
 body{font:16px/1 sans-serif}
 
-
+.sect-content,.sect-2{
+	padding-left: 0;
+	padding-right: 0;
+}
 /*VERTICAL MENU*/
 nav.vertical{
   position:relative;
-  width:250px;
   z-index: 1000;
-  position: absolute;
   height: 100%;
+  padding-left: 0;
+  padding-right: 0;
   background-color: #68a697;
 }
 

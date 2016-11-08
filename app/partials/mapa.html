@@ -10,16 +10,79 @@
   height: 500px;
 }																													
 </style>
-
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
 <!-- Resources -->
-
+<script src="js/jquery.js"></script>
 </head>
 <body ng-controller="OpenWeatherCtrl">
 <!-- HTML -->
-<div id="info">Click the country to display it's information</div>
-<br>
-<div id="chartdiv" style="width:400px;height:300px;"></div>	
-<script src="js/jquery.js"></script>
+
+    <div class="col-xs-12 sect-content">
+            
+        <nav class="vertical col-xs-3">
+          <ul>
+            <li class="logo_inicio">
+                <a class="logo" href="" style="background-color: #506175;">
+                    <img class="img-responsive" src="../img/inicio/logo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <p><img class="img-responsive" src="../img/inicio/home.png" alt="">
+                    <b>Inicio</b>
+                    </p>
+                </a>
+            </li>
+                <li>
+                <a href="#/forecast"><img class="img-responsive" src="../img/inicio/clima.png" alt="">
+                    <b>Ciudades</b>
+                </a>
+                 
+                <ul class="dropbox_citys">
+                    <li ng-repeat="post in exampleLocations | orderBy:'name':true" ng-click="setLocation(post)" >
+                        <a href="#/forecast">{{post}}</a>
+                    </li>
+                </ul>
+            </li>
+              <li>
+                <a href="/app/partials/mapa.html"><img class="img-responsive" src="../img/inicio/clima.png" alt="">
+                    <b>Mapa</b>
+                </a>
+                
+            </li>
+              <li>
+                <a href="#/mapa"><img class="img-responsive" src="../img/inicio/clima.png" alt="">
+                    <b>Mapa1</b>
+                </a>
+                
+            </li>
+          </ul>
+        </nav>
+        <div class="col-xs-9 sect-2">
+            <div class="login col-xs-12">
+                <div class="login_2 col-xs-12">
+                    <a class="login_reg" href="#"><b>registrate!</b></a>
+                    <a class="login_ini" href="#" data-toggle="modal" data-target="#IniSesion"><b>Iniciar sesión</b></a>
+                </div>            
+            </div>
+            <div id="chartdiv" style="width:100%;height:400px;"></div> 
+            <br><br>
+            <div id="info">Click the country to display it's information</div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
 <script src="../lib/angular/angular.js"></script>
         <script src="../lib/angular/angular-route.js"></script>
         <script src="../lib/angular/angular-resource.js"></script>
